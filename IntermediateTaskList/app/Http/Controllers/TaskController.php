@@ -25,4 +25,9 @@ class TaskController extends Controller
     	$tasks=Task::where('user_id',$request->user()->id)->get();
     	return view('tasks.index',['tasks'=>$tasks]);
     }
+    public function destroy(Request $request, $taskId)
+	{
+    	$this->authorize('destroy', $task);
+    	$task->delete();return redirect('/tasks');
+	}
 }
