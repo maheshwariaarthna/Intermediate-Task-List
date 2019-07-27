@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tasks.index');
 });
 // Authentication Routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
